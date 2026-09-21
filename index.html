@@ -420,14 +420,14 @@ downloadBtn.addEventListener('click', async () => {
       useCORS: true,
       logging: false
     });
-    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png', 1.0));
+    const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 0.95));
     if(!blob) throw new Error('no blob');
 
     // ดาวน์โหลดไฟล์แบบมาตรฐานของเบราว์เซอร์ ใช้ได้กับทุกคนโดยไม่ต้องล็อกอินใดๆ
     const blobUrl = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = blobUrl;
-    a.download = 'the-crown-ตารางผ่อนบ้าน-A4.png';
+    a.download = 'the-crown-ตารางผ่อนบ้าน-A4.jpg';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
