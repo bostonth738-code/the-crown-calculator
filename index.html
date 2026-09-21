@@ -390,18 +390,15 @@ downloadBtn.addEventListener('click', async () => {
     const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png', 1.0));
     if(!blob) throw new Error('no blob');
 
-    const downloads = await claude.use('downloads');
-    if(downloads){
-      try{
-        await downloads.save({ filename: 'the-crown-ตารางผ่อนบ้าน-A4.png', data: blob });
-      } catch(err){
-        if(!err || err.code !== 'declined'){
-          alert('ไม่สามารถบันทึกรูปภาพได้ ลองใหม่อีกครั้ง');
-        }
-      }
-    } else {
-      alert('ฟีเจอร์ดาวน์โหลดไม่พร้อมใช้งานในหน้าจอนี้');
-    }
+    // ดาวน์โหลดไฟล์แบบมาตรฐานของเบราว์เซอร์ ใช้ได้กับทุกคนโดยไม่ต้องล็อกอินใดๆ
+    const blobUrl = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = blobUrl;
+    a.download = 'the-crown-ตารางผ่อนบ้าน-A4.png';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 5000);
   } catch(e){
     alert('เกิดข้อผิดพลาดขณะสร้างรูปภาพ');
   } finally {
