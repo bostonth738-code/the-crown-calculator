@@ -348,22 +348,22 @@ function buildA4Content(){
     overflow:hidden;
   `;
   a4.innerHTML = `
-    <div style="position:relative; width:100%; height:205px; flex-shrink:0; background-image:url('${HERO_IMG}'); background-size:cover; background-position:top center; background-repeat:no-repeat;">
+    <div style="position:relative; width:100%; height:240px; flex-shrink:0; background-image:url('${HERO_IMG}'); background-size:cover; background-position:top center; background-repeat:no-repeat;">
       <div style="position:absolute; left:0; right:0; bottom:0; padding:20px 40px 14px; background:linear-gradient(0deg, rgba(21,42,60,.94) 0%, rgba(21,42,60,0) 100%); color:#fff; text-align:center;">
         <div style="font-size:13px; letter-spacing:.04em; opacity:.9;">บริษัท โฮมฟอร์ไลฟ์พร็อพเพอร์ตี้ จำกัด</div>
       </div>
     </div>
-    <div style="padding:14px 40px 0;">
-      <div style="display:flex; justify-content:center; gap:28px; font-size:13px; color:#374151; margin-bottom:14px;">
+    <div style="padding:20px 40px 0;">
+      <div style="display:flex; justify-content:center; gap:28px; font-size:13px; color:#374151; margin-bottom:18px;">
         <div>ราคาบ้าน: <b style="color:#1e3a52;">${fmt(price)} บาท</b></div>
         ${bankLabel ? `<div>ธนาคาร: <b style="color:#1e3a52;">${bankLabel}</b></div>` : ''}
       </div>
       <table style="width:100%; border-collapse:collapse; font-size:12px;">
         <thead>
           <tr>
-            <th style="text-align:left; padding:5px 10px; background:#1e3a52; color:#fff; font-size:10px; text-transform:uppercase; letter-spacing:.03em; border-radius:6px 0 0 6px;">อายุลูกค้า</th>
-            <th style="text-align:right; padding:5px 10px; background:#1e3a52; color:#fff; font-size:10px; text-transform:uppercase; letter-spacing:.03em;">ระยะเวลาผ่อน</th>
-            <th style="text-align:right; padding:5px 10px; background:#1e3a52; color:#fff; font-size:10px; text-transform:uppercase; letter-spacing:.03em; border-radius:0 6px 6px 0;">ค่างวด/เดือน (บาท)</th>
+            <th style="text-align:left; padding:7px 10px; background:#1e3a52; color:#fff; font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; border-radius:6px 0 0 6px;">อายุลูกค้า</th>
+            <th style="text-align:right; padding:7px 10px; background:#1e3a52; color:#fff; font-size:10.5px; text-transform:uppercase; letter-spacing:.03em;">ระยะเวลาผ่อน</th>
+            <th style="text-align:right; padding:7px 10px; background:#1e3a52; color:#fff; font-size:10.5px; text-transform:uppercase; letter-spacing:.03em; border-radius:0 6px 6px 0;">ค่างวด/เดือน (บาท)</th>
           </tr>
         </thead>
         <tbody>${rows}</tbody>
@@ -371,7 +371,7 @@ function buildA4Content(){
     </div>
     <div style="margin-top:auto; background:#1e3a52; color:#fff;">
       <div style="height:2px; background:linear-gradient(90deg, rgba(201,162,39,0) 0%, #c9a227 50%, rgba(201,162,39,0) 100%);"></div>
-      <div style="padding:10px 40px 9px; text-align:center;">
+      <div style="padding:14px 40px 12px; text-align:center;">
         <div style="display:flex; justify-content:center; gap:36px; align-items:center; margin-bottom:10px;">
           <span style="display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; letter-spacing:.01em;">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffffff" style="flex-shrink:0;"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -390,7 +390,7 @@ function buildA4Content(){
   `;
   const style = document.createElement('style');
   style.textContent = `
-    #a4Capture table td{ padding:3px 10px; border-bottom:1px solid #e5e7eb; font-size:11px; }
+    #a4Capture table td{ padding:4px 10px; border-bottom:1px solid #e5e7eb; font-size:11.5px; }
     #a4Capture table td:first-child{ text-align:left; }
     #a4Capture table td:not(:first-child){ text-align:right; }
     #a4Capture table td.hi{ color:#1e3a52; font-weight:800; }
